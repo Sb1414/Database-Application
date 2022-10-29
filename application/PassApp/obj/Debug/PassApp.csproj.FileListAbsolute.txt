@@ -1,0 +1,11 @@
+C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\PassApp.exe.config
+C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\PassApp.exe
+C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\PassApp.pdb
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.AssemblyReference.cache
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.Form1.resources
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.Properties.Resources.resources
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.GenerateResource.cache
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.CoreCompileInputs.cache
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.exe
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.pdb
