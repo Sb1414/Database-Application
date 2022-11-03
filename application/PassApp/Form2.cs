@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace PassApp
 {
     public partial class Form2 : Form
     {
+        private SqlConnection SqlConnection = null;
         public Form2()
         {
             InitializeComponent();

@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace PassApp
 {
     public partial class Form1 : Form
     {
+        private SqlConnection sqlConnection  = null;
         public Form1()
         {
             InitializeComponent();
@@ -62,7 +67,27 @@ namespace PassApp
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            string loginUser = textBoxLogin.Text;
+            string passUser = textBoxPass.Text;
 
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM `SbTable` WHERE `Login` = @uL AND `Password` = @uP", sqlConnection);
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Yes");
+            } else
+            {
+                MessageBox.Show("No");
+            }
         }
 
         private void textBoxLogin_Enter(object sender, EventArgs e)
@@ -105,6 +130,18 @@ namespace PassApp
                 textBoxLogin.ForeColor = Color.FromArgb(127, 128, 132);
             }
             panel2.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SbDB"].ConnectionString);
+
+            sqlConnection.Open();
+            if (sqlConnection.State == ConnectionState.Open)
+            {
+                MessageBox.Show("подключено!");
+            }
+
         }
     }
 }
