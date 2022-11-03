@@ -9,3 +9,4 @@ C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.Gene
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.CoreCompileInputs.cache
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.exe
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.pdb
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.Form2.resources

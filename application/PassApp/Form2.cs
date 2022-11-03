@@ -7,20 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PassApp
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
             textBoxLogin.Text = "Логин";
-            textBoxLogin.ForeColor = Color.FromArgb(127, 128, 132); 
+            textBoxLogin.ForeColor = Color.FromArgb(127, 128, 132);
             textBoxPass.Text = "Пароль";
             textBoxPass.PasswordChar = '\0';
             textBoxPass.ForeColor = Color.FromArgb(127, 128, 132);
+            textBoxName.Text = "Имя";
+            textBoxName.ForeColor = Color.FromArgb(127, 128, 132);
+            textBoxSurname.Text = "Фамилия";
+            textBoxSurname.ForeColor = Color.FromArgb(127, 128, 132);
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -60,11 +63,6 @@ namespace PassApp
             label2.ForeColor = Color.FromArgb(127, 128, 132);
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxLogin_Enter(object sender, EventArgs e)
         {
             if (textBoxLogin.Text == "Логин")
@@ -72,7 +70,8 @@ namespace PassApp
                 textBoxLogin.Text = "";
                 textBoxLogin.ForeColor = Color.FromArgb(230, 179, 51);
             }
-            panel2.BackgroundImage = Properties.Resources.backLogClick;
+            panel3.BackgroundImage = Properties.Resources.backLogClick;
+            panel2.BackgroundImage = Properties.Resources.backClick;
         }
 
         private void textBoxPass_Enter(object sender, EventArgs e)
@@ -83,7 +82,8 @@ namespace PassApp
                 textBoxPass.PasswordChar = '●';
                 textBoxPass.ForeColor = Color.FromArgb(230, 179, 51);
             }
-            panel2.BackgroundImage = Properties.Resources.backPassClick;
+            panel3.BackgroundImage = Properties.Resources.backPassClick;
+            panel2.BackgroundImage = Properties.Resources.backClick;
         }
 
         private void textBoxPass_Leave(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace PassApp
                 textBoxPass.PasswordChar = '\0';
                 textBoxPass.ForeColor = Color.FromArgb(127, 128, 132);
             }
+            panel3.BackgroundImage = Properties.Resources.backClick;
             panel2.BackgroundImage = Properties.Resources.backClick;
         }
 
@@ -104,7 +105,59 @@ namespace PassApp
                 textBoxLogin.Text = "Логин";
                 textBoxLogin.ForeColor = Color.FromArgb(127, 128, 132);
             }
+            panel3.BackgroundImage = Properties.Resources.backClick;
             panel2.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void textBoxName_Enter(object sender, EventArgs e)
+        {
+            if (textBoxName.Text == "Имя")
+            {
+                textBoxName.Text = "";
+                textBoxName.ForeColor = Color.FromArgb(230, 179, 51);
+            }
+            panel2.BackgroundImage = Properties.Resources.backLogClick;
+            panel3.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void textBoxName_Leave(object sender, EventArgs e)
+        {
+            if (textBoxName.Text == "")
+            {
+                textBoxName.Text = "Имя";
+                textBoxName.ForeColor = Color.FromArgb(127, 128, 132);
+            }
+            panel2.BackgroundImage = Properties.Resources.backClick;
+            panel3.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void textBoxSurname_Enter(object sender, EventArgs e)
+        {
+            if (textBoxSurname.Text == "Фамилия")
+            {
+                textBoxSurname.Text = "";
+                textBoxSurname.ForeColor = Color.FromArgb(230, 179, 51);
+            }
+            panel2.BackgroundImage = Properties.Resources.backPassClick;
+            panel3.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void textBoxSurname_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSurname.Text == "")
+            {
+                textBoxSurname.Text = "Фамилия";
+                textBoxSurname.ForeColor = Color.FromArgb(127, 128, 132);
+            }
+            panel2.BackgroundImage = Properties.Resources.backClick;
+            panel3.BackgroundImage = Properties.Resources.backClick;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }
