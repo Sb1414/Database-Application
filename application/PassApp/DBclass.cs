@@ -13,7 +13,7 @@ namespace PassApp
 {
     internal class DBclass
     {
-        MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["SbDB"].ConnectionString);
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=sbdb");
 
         public void openConnection()
         {

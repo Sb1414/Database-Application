@@ -17,7 +17,6 @@ namespace PassApp
 {
     public partial class Form1 : Form
     {
-        private SqlConnection sqlConnection  = null;
         public Form1()
         {
             InitializeComponent();
@@ -58,35 +57,54 @@ namespace PassApp
         private void label2_MouseHover(object sender, EventArgs e)
         {
             label2.ForeColor = Color.FromArgb(230, 179, 51);
+            labelInfo.Text = "";
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.ForeColor = Color.FromArgb(127, 128, 132);
+            labelInfo.Text = "";
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string loginUser = textBoxLogin.Text;
-            string passUser = textBoxPass.Text;
-
-            DataTable table = new DataTable();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            SqlCommand command = new SqlCommand("SELECT * FROM `SbTable` WHERE `Login` = @uL AND `Password` = @uP", sqlConnection);
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            
-            if (table.Rows.Count > 0)
+            labelInfo.Text = "";
+            if ((textBoxLogin.Text == "" | textBoxLogin.Text == "Логин") | (textBoxPass.Text == "" | textBoxPass.Text == "Пароль"))
             {
-                MessageBox.Show("Yes");
-            } else
+                labelInfo.Text = "Заполнены не все поля!";
+                labelInfo.ForeColor = Color.Red;
+            }
+            else
             {
-                MessageBox.Show("No");
+                string loginUser = textBoxLogin.Text;
+                string passUser = textBoxPass.Text;
+
+                DBclass db = new DBclass();
+
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `Login` = @uL AND `Password` = @uP", db.getConnection());
+                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                labelInfo.Text = "Проверка...";
+                labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+
+                if (table.Rows.Count > 0)
+                {
+                    labelInfo.Text = "Выполняется вход";
+                    labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+                }
+                else
+                {
+                    labelInfo.Text = "Пользователь не найден";
+                    labelInfo.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -98,6 +116,7 @@ namespace PassApp
                 textBoxLogin.ForeColor = Color.FromArgb(230, 179, 51);
             }
             panel2.BackgroundImage = Properties.Resources.backLogClick;
+            labelInfo.Text = "";
         }
 
         private void textBoxPass_Enter(object sender, EventArgs e)
@@ -109,6 +128,7 @@ namespace PassApp
                 textBoxPass.ForeColor = Color.FromArgb(230, 179, 51);
             }
             panel2.BackgroundImage = Properties.Resources.backPassClick;
+            labelInfo.Text = "";
         }
 
         private void textBoxPass_Leave(object sender, EventArgs e)
@@ -120,6 +140,7 @@ namespace PassApp
                 textBoxPass.ForeColor = Color.FromArgb(127, 128, 132);
             }
             panel2.BackgroundImage = Properties.Resources.backClick;
+            labelInfo.Text = "";
         }
 
         private void textBoxLogin_Leave(object sender, EventArgs e)
@@ -130,18 +151,8 @@ namespace PassApp
                 textBoxLogin.ForeColor = Color.FromArgb(127, 128, 132);
             }
             panel2.BackgroundImage = Properties.Resources.backClick;
+            labelInfo.Text = "";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SbDB"].ConnectionString);
-
-            sqlConnection.Open();
-            if (sqlConnection.State == ConnectionState.Open)
-            {
-                MessageBox.Show("подключено!");
-            }
-
-        }
     }
 }

@@ -10,8 +10,6 @@ C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.Core
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.exe
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.pdb
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.Form2.resources
-C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\Database1.mdf
-C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\Database1_log.ldf
 C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\Google.Protobuf.dll
 C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\K4os.Compression.LZ4.dll
