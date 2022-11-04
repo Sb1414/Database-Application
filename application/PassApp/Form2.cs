@@ -16,7 +16,6 @@ namespace PassApp
 {
     public partial class Form2 : Form
     {
-        private SqlConnection SqlConnection = null;
         public Form2()
         {
             InitializeComponent();
@@ -205,6 +204,11 @@ namespace PassApp
                 {
                     labelInfo.Text = "Аккаунт создан, войдите!";
                     labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+
+                    Form3 form3 = new Form3();
+                    form3.Show();
+                    this.Hide();
+
                 }
                 else
                 {

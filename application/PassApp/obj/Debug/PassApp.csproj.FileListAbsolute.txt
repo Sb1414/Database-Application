@@ -33,3 +33,4 @@ C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\System.Memory.xml
 C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Сабина\source\repos\PassApp\PassApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.csproj.CopyComplete
+C:\Users\Сабина\source\repos\PassApp\PassApp\obj\Debug\PassApp.Form3.resources

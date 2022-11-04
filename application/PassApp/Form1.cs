@@ -99,6 +99,11 @@ namespace PassApp
                 {
                     labelInfo.Text = "Выполняется вход";
                     labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+
+                    Form3 form3 = new Form3();
+                    form3.Show();
+                    this.Hide();
+
                 }
                 else
                 {
