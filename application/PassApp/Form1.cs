@@ -79,6 +79,9 @@ namespace PassApp
                 string loginUser = textBoxLogin.Text;
                 string passUser = textBoxPass.Text;
 
+                DataBank.loginUser = loginUser;
+                DataBank.passwordUser = passUser;
+
                 DBclass db = new DBclass();
 
                 DataTable table = new DataTable();

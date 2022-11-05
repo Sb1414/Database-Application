@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
             this.panelUp = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -50,19 +50,6 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
             // 
-            // labelName
-            // 
-            this.labelName.BackColor = System.Drawing.Color.Transparent;
-            this.labelName.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.labelName.Location = new System.Drawing.Point(186, 0);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(527, 25);
-            this.labelName.TabIndex = 2;
-            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
-            this.labelName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
-            // 
             // panelUp
             // 
             this.panelUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
@@ -75,6 +62,19 @@
             this.panelUp.TabIndex = 0;
             this.panelUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             this.panelUp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
+            // 
+            // labelName
+            // 
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
+            this.labelName.Location = new System.Drawing.Point(186, 0);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(527, 25);
+            this.labelName.TabIndex = 2;
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
+            this.labelName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
             // 
             // buttonClose
             // 
