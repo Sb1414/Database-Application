@@ -188,5 +188,20 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XOglavnDiag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XOgoriz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XOpobochnDiag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XOvertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-xo-game-20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

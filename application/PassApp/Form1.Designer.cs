@@ -124,7 +124,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.label1.Location = new System.Drawing.Point(1, 138);
+            this.label1.Location = new System.Drawing.Point(3, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(527, 28);
             this.label1.TabIndex = 2;
