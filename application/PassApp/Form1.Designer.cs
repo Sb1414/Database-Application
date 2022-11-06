@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelBorder = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUp = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panelBorder.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelUp.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelUp.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBorder
@@ -84,6 +85,44 @@
             this.labelInfo.Size = new System.Drawing.Size(527, 28);
             this.labelInfo.TabIndex = 21;
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::PassApp.Properties.Resources.backClick;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.textBoxPass);
+            this.panel2.Controls.Add(this.textBoxLogin);
+            this.panel2.Location = new System.Drawing.Point(92, 182);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(341, 128);
+            this.panel2.TabIndex = 20;
+            // 
+            // textBoxPass
+            // 
+            this.textBoxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.textBoxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPass.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.textBoxPass.Location = new System.Drawing.Point(39, 78);
+            this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.PasswordChar = '●';
+            this.textBoxPass.Size = new System.Drawing.Size(260, 24);
+            this.textBoxPass.TabIndex = 2;
+            this.textBoxPass.Enter += new System.EventHandler(this.textBoxPass_Enter);
+            this.textBoxPass.Leave += new System.EventHandler(this.textBoxPass_Leave);
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLogin.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.textBoxLogin.Location = new System.Drawing.Point(39, 20);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(260, 24);
+            this.textBoxLogin.TabIndex = 1;
+            this.textBoxLogin.Enter += new System.EventHandler(this.textBoxLogin_Enter);
+            this.textBoxLogin.Leave += new System.EventHandler(this.textBoxLogin_Leave);
             // 
             // label2
             // 
@@ -143,44 +182,6 @@
             this.panelUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             this.panelUp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::PassApp.Properties.Resources.backClick;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.textBoxPass);
-            this.panel2.Controls.Add(this.textBoxLogin);
-            this.panel2.Location = new System.Drawing.Point(92, 182);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 128);
-            this.panel2.TabIndex = 20;
-            // 
-            // textBoxPass
-            // 
-            this.textBoxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
-            this.textBoxPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPass.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.textBoxPass.Location = new System.Drawing.Point(39, 78);
-            this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.PasswordChar = '●';
-            this.textBoxPass.Size = new System.Drawing.Size(260, 24);
-            this.textBoxPass.TabIndex = 2;
-            this.textBoxPass.Enter += new System.EventHandler(this.textBoxPass_Enter);
-            this.textBoxPass.Leave += new System.EventHandler(this.textBoxPass_Leave);
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
-            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxLogin.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.textBoxLogin.Location = new System.Drawing.Point(39, 20);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(260, 24);
-            this.textBoxLogin.TabIndex = 1;
-            this.textBoxLogin.Enter += new System.EventHandler(this.textBoxLogin_Enter);
-            this.textBoxLogin.Leave += new System.EventHandler(this.textBoxLogin_Leave);
-            // 
             // buttonClose
             // 
             this.buttonClose.BackColor = System.Drawing.Color.Transparent;
@@ -205,14 +206,15 @@
             this.ClientSize = new System.Drawing.Size(530, 551);
             this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelBorder.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panelUp.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelUp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
