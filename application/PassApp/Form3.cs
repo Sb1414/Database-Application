@@ -412,25 +412,46 @@ namespace PassApp
             }
             else
             {
-                DBclass db = new DBclass();
-                MySqlCommand command = new MySqlCommand("UPDATE `user` SET `password` = @newpass WHERE `user`.`login` = @login", db.getConnection());
+                DBclass db1 = new DBclass();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command1 = new MySqlCommand("SELECT * FROM `user` WHERE `Login` = @uL AND `Password` = @uP", db1.getConnection());
+                command1.Parameters.Add("@uL", MySqlDbType.VarChar).Value = DataBank.loginUser;
+                command1.Parameters.Add("@uP", MySqlDbType.VarChar).Value = textBoxOld.Text;
 
-                command.Parameters.Add("@newpass", MySqlDbType.VarChar).Value = textBoxNew.Text;
-                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = DataBank.loginUser;
+                adapter.SelectCommand = command1;
+                adapter.Fill(table);
 
-                db.openConnection();
-
-                labelInfo.Text = "Смена пароля..";
+                labelInfo.Text = "Проверка...";
                 labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
 
-                if (command.ExecuteNonQuery() == 1)
+                if (table.Rows.Count > 0)
                 {
-                    labelInfo.Text = "Пароль изменён!";
+                    DBclass db = new DBclass();
+                    MySqlCommand command = new MySqlCommand("UPDATE `user` SET `password` = @newpass WHERE `user`.`login` = @login", db.getConnection());
+
+                    command.Parameters.Add("@newpass", MySqlDbType.VarChar).Value = textBoxNew.Text;
+                    command.Parameters.Add("@login", MySqlDbType.VarChar).Value = DataBank.loginUser;
+
+                    db.openConnection();
+
+                    labelInfo.Text = "Смена пароля..";
                     labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        labelInfo.Text = "Пароль изменён!";
+                        labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+                    }
+                    else
+                    {
+                        labelInfo.Text = "Ошибка, пароль не изменен";
+                        labelInfo.ForeColor = Color.Red;
+                    }
                 }
                 else
                 {
-                    labelInfo.Text = "Ошибка, пароль не изменен";
+                    labelInfo.Text = "Старый пароль неверный";
                     labelInfo.ForeColor = Color.Red;
                 }
             }
