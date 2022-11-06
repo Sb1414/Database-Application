@@ -163,6 +163,26 @@ namespace PassApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_введите_пин_код_еще_раз_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-введите-пин-код-еще-раз-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_выход_из_системы__в_кружке__стрелка_вверх_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-выход-из-системы,-в-кружке,-стрелка-вверх-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap XOglavnDiag {
             get {
                 object obj = ResourceManager.GetObject("XOglavnDiag", resourceCulture);

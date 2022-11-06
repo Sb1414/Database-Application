@@ -500,5 +500,15 @@ namespace PassApp
             panelBackPass.BackgroundImage = Properties.Resources.backClick;
             labelInfo.Text = "";
         }
+
+        private void mLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("действительно выйти?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+        }
     }
 }

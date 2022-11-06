@@ -203,5 +203,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-xo-game-20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-введите-пин-код-еще-раз-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-выход-из-системы,-в-кружке,-стрелка-вверх-20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

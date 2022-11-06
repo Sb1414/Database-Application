@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelPass = new System.Windows.Forms.Panel();
+            this.labelInfo = new System.Windows.Forms.Label();
+            this.buttonReplace = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.labelXO = new System.Windows.Forms.Label();
             this.panelGame = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -43,9 +48,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.mInfo = new System.Windows.Forms.ToolStripButton();
-            this.mPass = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panelUp = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.panelBorder = new System.Windows.Forms.Panel();
@@ -56,31 +60,23 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelXO = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.panelBackPass = new System.Windows.Forms.Panel();
+            this.textBoxNew = new System.Windows.Forms.TextBox();
+            this.textBoxOld = new System.Windows.Forms.TextBox();
+            this.mLogOut = new System.Windows.Forms.ToolStripButton();
+            this.mPass = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.buttonMaximiz = new System.Windows.Forms.Button();
             this.buttonMinimiz = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.panelPass = new System.Windows.Forms.Panel();
-            this.labelInfo = new System.Windows.Forms.Label();
-            this.panelBackPass = new System.Windows.Forms.Panel();
-            this.textBoxNew = new System.Windows.Forms.TextBox();
-            this.textBoxOld = new System.Windows.Forms.TextBox();
-            this.buttonReplace = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panelPass.SuspendLayout();
             this.panelGame.SuspendLayout();
             this.panelCenter.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panelUp.SuspendLayout();
             this.panelBorder.SuspendLayout();
-            this.panelPass.SuspendLayout();
             this.panelBackPass.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +96,92 @@
             this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelUp_MouseMove);
+            // 
+            // panelPass
+            // 
+            this.panelPass.Controls.Add(this.labelInfo);
+            this.panelPass.Controls.Add(this.panelBackPass);
+            this.panelPass.Controls.Add(this.buttonReplace);
+            this.panelPass.Controls.Add(this.label1);
+            this.panelPass.Location = new System.Drawing.Point(494, 187);
+            this.panelPass.Name = "panelPass";
+            this.panelPass.Size = new System.Drawing.Size(392, 381);
+            this.panelPass.TabIndex = 6;
+            this.panelPass.Visible = false;
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.labelInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelInfo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
+            this.labelInfo.Location = new System.Drawing.Point(0, 243);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(392, 28);
+            this.labelInfo.TabIndex = 25;
+            this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonReplace
+            // 
+            this.buttonReplace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.buttonReplace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonReplace.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReplace.FlatAppearance.BorderSize = 0;
+            this.buttonReplace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReplace.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonReplace.ForeColor = System.Drawing.Color.White;
+            this.buttonReplace.Location = new System.Drawing.Point(104, 274);
+            this.buttonReplace.Name = "buttonReplace";
+            this.buttonReplace.Size = new System.Drawing.Size(170, 42);
+            this.buttonReplace.TabIndex = 23;
+            this.buttonReplace.Text = "сменить";
+            this.buttonReplace.UseVisualStyleBackColor = false;
+            this.buttonReplace.Click += new System.EventHandler(this.buttonReplace_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
+            this.label1.Location = new System.Drawing.Point(0, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(392, 28);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Сменить пароль";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Bauhaus 93", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
+            this.button10.Location = new System.Drawing.Point(104, 543);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(174, 40);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "играть снова";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Visible = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // labelXO
+            // 
+            this.labelXO.BackColor = System.Drawing.Color.Transparent;
+            this.labelXO.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelXO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
+            this.labelXO.Location = new System.Drawing.Point(41, 187);
+            this.labelXO.Name = "labelXO";
+            this.labelXO.Size = new System.Drawing.Size(302, 25);
+            this.labelXO.TabIndex = 5;
+            this.labelXO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelXO.Visible = false;
             // 
             // panelGame
             // 
@@ -301,34 +383,32 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mInfo,
+            this.mLogOut,
             this.mPass,
             this.toolStripSeparator1,
             this.toolStripButton1,
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.Size = new System.Drawing.Size(925, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // mPass
-            // 
-            this.mPass.BackColor = System.Drawing.Color.Transparent;
-            this.mPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.mPass.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
-            this.mPass.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mPass.Name = "mPass";
-            this.mPass.Size = new System.Drawing.Size(29, 22);
-            this.mPass.Text = "Сменить пароль";
-            this.mPass.Click += new System.EventHandler(this.mSave_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // panelUp
             // 
@@ -417,53 +497,77 @@
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
-            // openFileDialog1
+            // panelBackPass
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panelBackPass.BackgroundImage = global::PassApp.Properties.Resources.backClick;
+            this.panelBackPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBackPass.Controls.Add(this.textBoxNew);
+            this.panelBackPass.Controls.Add(this.textBoxOld);
+            this.panelBackPass.Location = new System.Drawing.Point(23, 112);
+            this.panelBackPass.Name = "panelBackPass";
+            this.panelBackPass.Size = new System.Drawing.Size(341, 128);
+            this.panelBackPass.TabIndex = 24;
             // 
-            // labelXO
+            // textBoxNew
             // 
-            this.labelXO.BackColor = System.Drawing.Color.Transparent;
-            this.labelXO.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelXO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.labelXO.Location = new System.Drawing.Point(41, 187);
-            this.labelXO.Name = "labelXO";
-            this.labelXO.Size = new System.Drawing.Size(302, 25);
-            this.labelXO.TabIndex = 5;
-            this.labelXO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelXO.Visible = false;
+            this.textBoxNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.textBoxNew.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNew.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.textBoxNew.Location = new System.Drawing.Point(39, 78);
+            this.textBoxNew.Name = "textBoxNew";
+            this.textBoxNew.Size = new System.Drawing.Size(260, 24);
+            this.textBoxNew.TabIndex = 2;
+            this.textBoxNew.Enter += new System.EventHandler(this.textBoxNew_Enter);
+            this.textBoxNew.Leave += new System.EventHandler(this.textBoxNew_Leave);
             // 
-            // button10
+            // textBoxOld
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Bauhaus 93", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.button10.Location = new System.Drawing.Point(104, 543);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(174, 40);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "играть снова";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Visible = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.textBoxOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
+            this.textBoxOld.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOld.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxOld.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
+            this.textBoxOld.Location = new System.Drawing.Point(39, 20);
+            this.textBoxOld.Name = "textBoxOld";
+            this.textBoxOld.Size = new System.Drawing.Size(260, 24);
+            this.textBoxOld.TabIndex = 1;
+            this.textBoxOld.Enter += new System.EventHandler(this.textBoxOld_Enter);
+            this.textBoxOld.Leave += new System.EventHandler(this.textBoxOld_Leave);
             // 
-            // toolStripSeparator2
+            // mLogOut
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.mLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.mLogOut.BackgroundImage = global::PassApp.Properties.Resources.icons8_выход_из_системы__в_кружке__стрелка_вверх_20;
+            this.mLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mLogOut.ForeColor = System.Drawing.Color.Transparent;
+            this.mLogOut.Name = "mLogOut";
+            this.mLogOut.Size = new System.Drawing.Size(29, 22);
+            this.mLogOut.Tag = "Выйти";
+            this.mLogOut.Click += new System.EventHandler(this.mLogOut_Click);
+            // 
+            // mPass
+            // 
+            this.mPass.BackColor = System.Drawing.Color.Transparent;
+            this.mPass.BackgroundImage = global::PassApp.Properties.Resources.icons8_введите_пин_код_еще_раз_20;
+            this.mPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mPass.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.mPass.ForeColor = System.Drawing.Color.Transparent;
+            this.mPass.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mPass.Name = "mPass";
+            this.mPass.Size = new System.Drawing.Size(29, 22);
+            this.mPass.Tag = "Сменить пароль";
+            this.mPass.Text = "Сменить пароль";
+            this.mPass.Click += new System.EventHandler(this.mSave_Click);
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripButton1.BackgroundImage = global::PassApp.Properties.Resources.icons8_xo_game_20;
             this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.toolStripButton1.ForeColor = System.Drawing.Color.Transparent;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripButton1.Tag = "Крестики-нолики";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // buttonMaximiz
@@ -520,97 +624,6 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // panelPass
-            // 
-            this.panelPass.Controls.Add(this.labelInfo);
-            this.panelPass.Controls.Add(this.panelBackPass);
-            this.panelPass.Controls.Add(this.buttonReplace);
-            this.panelPass.Controls.Add(this.label1);
-            this.panelPass.Location = new System.Drawing.Point(494, 187);
-            this.panelPass.Name = "panelPass";
-            this.panelPass.Size = new System.Drawing.Size(392, 381);
-            this.panelPass.TabIndex = 6;
-            this.panelPass.Visible = false;
-            // 
-            // labelInfo
-            // 
-            this.labelInfo.BackColor = System.Drawing.Color.Transparent;
-            this.labelInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelInfo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.labelInfo.Location = new System.Drawing.Point(0, 243);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(392, 28);
-            this.labelInfo.TabIndex = 25;
-            this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelBackPass
-            // 
-            this.panelBackPass.BackgroundImage = global::PassApp.Properties.Resources.backClick;
-            this.panelBackPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBackPass.Controls.Add(this.textBoxNew);
-            this.panelBackPass.Controls.Add(this.textBoxOld);
-            this.panelBackPass.Location = new System.Drawing.Point(23, 112);
-            this.panelBackPass.Name = "panelBackPass";
-            this.panelBackPass.Size = new System.Drawing.Size(341, 128);
-            this.panelBackPass.TabIndex = 24;
-            // 
-            // textBoxNew
-            // 
-            this.textBoxNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
-            this.textBoxNew.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNew.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.textBoxNew.Location = new System.Drawing.Point(39, 78);
-            this.textBoxNew.Name = "textBoxNew";
-            this.textBoxNew.Size = new System.Drawing.Size(260, 24);
-            this.textBoxNew.TabIndex = 2;
-            this.textBoxNew.Enter += new System.EventHandler(this.textBoxNew_Enter);
-            this.textBoxNew.Leave += new System.EventHandler(this.textBoxNew_Leave);
-            // 
-            // textBoxOld
-            // 
-            this.textBoxOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(37)))));
-            this.textBoxOld.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxOld.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxOld.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.textBoxOld.Location = new System.Drawing.Point(39, 20);
-            this.textBoxOld.Name = "textBoxOld";
-            this.textBoxOld.Size = new System.Drawing.Size(260, 24);
-            this.textBoxOld.TabIndex = 1;
-            this.textBoxOld.Enter += new System.EventHandler(this.textBoxOld_Enter);
-            this.textBoxOld.Leave += new System.EventHandler(this.textBoxOld_Leave);
-            // 
-            // buttonReplace
-            // 
-            this.buttonReplace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(179)))), ((int)(((byte)(51)))));
-            this.buttonReplace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonReplace.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonReplace.FlatAppearance.BorderSize = 0;
-            this.buttonReplace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReplace.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonReplace.ForeColor = System.Drawing.Color.White;
-            this.buttonReplace.Location = new System.Drawing.Point(104, 274);
-            this.buttonReplace.Name = "buttonReplace";
-            this.buttonReplace.Size = new System.Drawing.Size(170, 42);
-            this.buttonReplace.TabIndex = 23;
-            this.buttonReplace.Text = "сменить";
-            this.buttonReplace.UseVisualStyleBackColor = false;
-            this.buttonReplace.Click += new System.EventHandler(this.buttonReplace_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(128)))), ((int)(((byte)(132)))));
-            this.label1.Location = new System.Drawing.Point(0, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 28);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Сменить пароль";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -623,6 +636,7 @@
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelPass.ResumeLayout(false);
             this.panelGame.ResumeLayout(false);
             this.panelCenter.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
@@ -630,7 +644,6 @@
             this.toolStrip1.PerformLayout();
             this.panelUp.ResumeLayout(false);
             this.panelBorder.ResumeLayout(false);
-            this.panelPass.ResumeLayout(false);
             this.panelBackPass.ResumeLayout(false);
             this.panelBackPass.PerformLayout();
             this.ResumeLayout(false);
@@ -651,12 +664,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button buttonMaximiz;
         private System.Windows.Forms.Button buttonMinimiz;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton mInfo;
+        private System.Windows.Forms.ToolStripButton mLogOut;
         private System.Windows.Forms.ToolStripButton mPass;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Panel panelGame;
@@ -671,7 +682,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label labelXO;
         private System.Windows.Forms.Button button10;
