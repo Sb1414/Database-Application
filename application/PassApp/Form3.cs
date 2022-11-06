@@ -412,45 +412,27 @@ namespace PassApp
             }
             else
             {
-                /*
-                string loginUser = textBoxLogin.Text;
-                string passUser = textBoxPass.Text;
-
-                DataBank.loginUser = loginUser;
-                DataBank.passwordUser = passUser;
-
                 DBclass db = new DBclass();
+                MySqlCommand command = new MySqlCommand("UPDATE `user` SET `password` = @newpass WHERE `user`.`login` = @login", db.getConnection());
 
-                DataTable table = new DataTable();
+                command.Parameters.Add("@newpass", MySqlDbType.VarChar).Value = textBoxNew.Text;
+                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = DataBank.loginUser;
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                db.openConnection();
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `Login` = @uL AND `Password` = @uP", db.getConnection());
-                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
-                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                labelInfo.Text = "Проверка...";
+                labelInfo.Text = "Смена пароля..";
                 labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
 
-                if (table.Rows.Count > 0)
+                if (command.ExecuteNonQuery() == 1)
                 {
-                    labelInfo.Text = "Выполняется вход";
+                    labelInfo.Text = "Пароль изменён!";
                     labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
-
-                    Form3 form3 = new Form3();
-                    form3.Show();
-                    this.Hide();
-
                 }
                 else
                 {
-                    labelInfo.Text = "Пользователь не найден";
+                    labelInfo.Text = "Ошибка, пароль не изменен";
                     labelInfo.ForeColor = Color.Red;
                 }
-                */
             }
         }
 
