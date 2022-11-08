@@ -441,18 +441,31 @@ namespace PassApp
                     if (command.ExecuteNonQuery() == 1)
                     {
                         labelInfo.Text = "Пароль изменён!";
-                        labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+                        labelInfo.ForeColor = Color.FromArgb(230, 179, 51); 
+                        textBoxOld.Text = "Старый пароль";
+                        textBoxNew.Text = "Новый пароль";
+                        textBoxOld.ForeColor = Color.FromArgb(127, 128, 132);
+                        textBoxNew.ForeColor = Color.FromArgb(127, 128, 132);
+
                     }
                     else
                     {
                         labelInfo.Text = "Ошибка, пароль не изменен";
                         labelInfo.ForeColor = Color.Red;
+                        textBoxOld.Text = "Старый пароль";
+                        textBoxNew.Text = "Новый пароль";
+                        textBoxOld.ForeColor = Color.FromArgb(127, 128, 132);
+                        textBoxNew.ForeColor = Color.FromArgb(127, 128, 132);
                     }
                 }
                 else
                 {
                     labelInfo.Text = "Старый пароль неверный";
                     labelInfo.ForeColor = Color.Red;
+                    textBoxOld.Text = "Старый пароль";
+                    textBoxNew.Text = "Новый пароль";
+                    textBoxOld.ForeColor = Color.FromArgb(127, 128, 132);
+                    textBoxNew.ForeColor = Color.FromArgb(127, 128, 132);
                 }
             }
         }
@@ -509,6 +522,29 @@ namespace PassApp
                 form1.Show();
                 this.Hide();
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("действительно удалить аккаунт?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DBclass db1 = new DBclass();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command1 = new MySqlCommand("DELETE FROM user WHERE `user`.`login` = @uL", db1.getConnection());
+                command1.Parameters.Add("@uL", MySqlDbType.VarChar).Value = DataBank.loginUser;
+
+                adapter.SelectCommand = command1;
+                adapter.Fill(table);
+
+                labelInfo.Text = "Проверка...";
+                labelInfo.ForeColor = Color.FromArgb(230, 179, 51);
+
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+            
         }
     }
 }
